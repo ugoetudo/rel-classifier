@@ -10,39 +10,49 @@ import './App.css';
 import { useState } from "react";
 import Records from "./records.json";
 
+class Relation extends React.Component {
+  
+  state = {
+    color: 'lightblue'
+  }
 
-
-
-// import {
-//   BrowserRouter as Router,
-//   Route,
-// } from 'react-router-dom';
-
-// import './index.css'
-//dev
-// const api_base_url = 'http://localhost:9000';
-
-function App(){
-const [color, setColor] = useState('lightblue');
-
-const changeColor = () => {
-    // const randomColor = getRandomColor();
+  changeColor = () => {
     console.log('Color Change with', 'green');
+    this.setState(prevState => {
+      return { color: prevState.color === 'lightblue'?'green':'lightblue'
+      }
+    })
     // setColor('green');
-    setColor('green');
 }
-    return(
-  <div className='outer'>
-    {
-      Records.map( (record, index) => {
-        return(
-          <div key={index}> 
-            <h3 className='cards'> <span key ={index} style={{backgroundColor: color}} onMouseEnter={changeColor} onMouseLeave={ () => setColor('lightblue')}> {record.token_text} </span></h3>
-          </div>
-      )
-      })
-    }
-  </div>
-    );
+
+
+  render ()
+{
+  const tokens_to_render = [];
+  const input_tokens = Records;
+  
+  var cntr = 0;
+
+  input_tokens.forEach(tk => {
+
+    tokens_to_render.push(
+      <button key={cntr} 
+        index={tk['tkid']} style={{backgroundColor: this.state.color}} onMouseEnter={this.changeColor} onMouseLeave={ this.changeColor}
+      //   onSelected={(ix,value) => this.addToBundle(ix, value)}
+      > 
+          {tk['token_text']} 
+        </button>
+    )
+    cntr = cntr + 1;
+  });
+  
+  return(
+        <div className="control-box">
+          {tokens_to_render}
+        </div>
+  )
+
+  }
 }
-export default App;
+
+export default Relation;

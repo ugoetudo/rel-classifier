@@ -13,17 +13,25 @@ import Records from "./records.json";
 class Relation extends React.Component {
   
   state = {
-    color: 'lightblue'
+    color: 'lightblue',
+    hover: false
   }
 
   changeColor = () => {
     console.log('Color Change with', 'green');
     this.setState(prevState => {
-      return { color: prevState.color === 'lightblue'?'green':'lightblue'
+      return { color: prevState.color === 'lightblue'?'green':'lightblue',
+      hover: prevState.hover === false?true:false
       }
     })
-    // setColor('green');
-}
+  }
+
+  // changeHover = () => {
+  //   this.setState(prevState => {
+  //     return { hover: prevState.hover === false?true:false
+  //     }
+  //   })
+  // }
 
 
   render ()
@@ -37,7 +45,8 @@ class Relation extends React.Component {
 
     tokens_to_render.push(
       <button key={cntr} 
-        index={tk['tkid']} style={{backgroundColor: this.state.color}} onMouseEnter={this.changeColor} onMouseLeave={ this.changeColor}
+        index={tk['spanid']} onMouseEnter={this.changeColor} onMouseLeave={ this.changeColor} style={{backgroundColor: this.state.hover?this.state.color:'lightblue'}}
+        // style={{backgroundColor: this.state.hover?this.state.color:'lightblue'}}  onMouseEnter={this.changeColor} onMouseLeave={ this.changeColor}
       //   onSelected={(ix,value) => this.addToBundle(ix, value)}
       > 
           {tk['token_text']} 

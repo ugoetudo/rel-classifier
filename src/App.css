@@ -59,6 +59,11 @@
   background: gold;
 }
 
+.control-box {
+  grid-area:main;
+  width:400px;
+}
+
 /* .cards > b {
   background-color: lightblue;
   display: inline;

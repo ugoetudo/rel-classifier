@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,31 @@
   to {
     transform: rotate(360deg);
   }
+} */
+.outer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  /* background-color: lightblue; */
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: black;
+  margin-top: 0.5em;
+  padding: 0.2em;
+}
+
+.cards:hover * {
+  background: gold;
+}
+
+/* .cards > b {
+  background-color: lightblue;
+  display: inline;
+} */

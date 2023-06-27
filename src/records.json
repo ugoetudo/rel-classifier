@@ -2,128 +2,114 @@
     {
         "sid": 1,
         "tkid": 1,
-        "token_text": "It",
-        "spanid": 1
+        "token_text": "It"
     },
     {
         "sid": 1,
         "tkid": 2,
-        "token_text": "is",
-        "spanid": 2
+        "token_text": "is"
     },
     {
         "sid": 1,
         "tkid": 3,
-        "token_text": "devoted",
-        "spanid": 3
+        "token_text": "devoted"
     },
     {
         "sid": 1,
         "tkid": 4,
-        "token_text": "to",
-        "spanid": 4
+        "token_text": "to"
     },
     {
         "sid": 1,
         "tkid": 5,
-        "token_text": "the",
-        "spanid": 5
+        "token_text": "the"
     },
     {
         "sid": 1,
         "tkid": 6,
         "token_text": "Second",
-        "spanid": 6
+        "spanid": 1
     },
     {
         "sid": 1,
         "tkid": 7,
         "token_text": "World",
-        "spanid": 6
+        "spanid": 1
     },
     {
         "sid": 1,
         "tkid": 8,
         "token_text": "War",
-        "spanid": 6
+        "spanid": 1
     },
     {
         "sid": 1,
         "tkid": 9,
-        "token_text": ",",
-        "spanid": 7
+        "token_text": ","
     },
     {
         "sid": 1,
         "tkid": 10,
-        "token_text": "which",
-        "spanid": 8
+        "token_text": "which"
     },
     {
         "sid": 1,
         "tkid": 11,
-        "token_text": "many",
-        "spanid": 9
+        "token_text": "many"
     },
     {
         "sid": 1,
         "tkid": 12,
-        "token_text": "scholars",
-        "spanid": 10
+        "token_text": "scholars"
     },
     {
         "sid": 1,
         "tkid": 13,
-        "token_text": "regard",
-        "spanid": 11
+        "token_text": "regard"
     },
     {
         "sid": 1,
         "tkid": 14,
-        "token_text": "as",
-        "spanid": 12
+        "token_text": "as"
     },
     {
         "sid": 1,
         "tkid": 15,
-        "token_text": "the",
-        "spanid": 13
+        "token_text": "the"
     },
     {
         "sid": 1,
         "tkid": 16,
         "token_text": "paradigmatic",
-        "spanid": 14
+        "spanid": 2
     },
     {
         "sid": 1,
         "tkid": 17,
         "token_text": "instance",
-        "spanid": 15
+        "spanid": 2
     },
     {
         "sid": 1,
         "tkid": 18,
-        "token_text": "of",
-        "spanid": 16
+        "token_text": "of"
     },
     {
         "sid": 1,
         "tkid": 19,
         "token_text": "total",
-        "spanid": 17
+        "spanid": 2
     },
     {
         "sid": 1,
         "tkid": 20,
         "token_text": "war",
-        "spanid": 18
+        "spanid": 2
     },
     {
         "sid": 1,
         "tkid": 21,
-        "token_text": ".",
-        "spanid": 19
+        "token_text": "."
     }
 
 ]

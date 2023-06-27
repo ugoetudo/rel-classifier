@@ -7,7 +7,7 @@ import './App.css';
 // import Fade from '@material-ui/core/Fade';
 // import Backdrop from '@material-ui/core/Backdrop';
 // import Dialog from '@material-ui/core/Dialog';
-import { useState } from "react";
+// import { useState } from "react";
 import Records from "./records.json";
 
 class Relation extends React.Component {
@@ -42,18 +42,50 @@ class Relation extends React.Component {
   var cntr = 0;
 
   input_tokens.forEach(tk => {
+    const span = tk['spanid'];
+    if (!tk['spanid'])
+    {
+        tokens_to_render.push(
+          <button key={cntr} 
+            index={tk['spanid']} style={{backgroundColor: 'lightblue'}}
+            // style={{backgroundColor: this.state.hover?this.state.color:'lightblue'}}  onMouseEnter={this.changeColor} onMouseLeave={ this.changeColor}
+          //   onSelected={(ix,value) => this.addToBundle(ix, value)}
+          > 
+              {tk['token_text']} 
+            </button>
+        )
+        cntr = cntr + 1;
+    }
+    else {
+      if(tk['spanid']===span){
+          tokens_to_render.push(
+            <button key={cntr} 
+              index={tk['spanid']} onMouseEnter={this.changeColor} onMouseLeave={ this.changeColor} style={{backgroundColor: this.state.hover?this.state.color:'lightblue'}}
+              // style={{backgroundColor: this.state.hover?this.state.color:'lightblue'}}  onMouseEnter={this.changeColor} onMouseLeave={ this.changeColor}
+            //   onSelected={(ix,value) => this.addToBundle(ix, value)}
+            > 
+                {tk['token_text']} 
+              </button>
+          )
+          cntr = cntr + 1;
+        }
 
-    tokens_to_render.push(
-      <button key={cntr} 
-        index={tk['spanid']} onMouseEnter={this.changeColor} onMouseLeave={ this.changeColor} style={{backgroundColor: this.state.hover?this.state.color:'lightblue'}}
-        // style={{backgroundColor: this.state.hover?this.state.color:'lightblue'}}  onMouseEnter={this.changeColor} onMouseLeave={ this.changeColor}
-      //   onSelected={(ix,value) => this.addToBundle(ix, value)}
-      > 
-          {tk['token_text']} 
-        </button>
-    )
-    cntr = cntr + 1;
-  });
+        else {
+          tokens_to_render.push(
+            <button key={cntr} 
+              index={tk['spanid']} style={{backgroundColor: 'lightblue'}}
+              // style={{backgroundColor: this.state.hover?this.state.color:'lightblue'}}  onMouseEnter={this.changeColor} onMouseLeave={ this.changeColor}
+            //   onSelected={(ix,value) => this.addToBundle(ix, value)}
+            > 
+                {tk['token_text']} 
+              </button>
+          )
+          cntr = cntr + 1;
+        }
+        }
+    }
+
+  );
   
   return(
         <div className="control-box">

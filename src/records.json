@@ -2,114 +2,144 @@
     {
         "sid": 1,
         "tkid": 1,
-        "token_text": "It"
+        "token_text": "It",
+        "display_id": 1
     },
     {
         "sid": 1,
         "tkid": 2,
-        "token_text": "is"
+        "token_text": "is",
+        "display_id": 2
     },
     {
         "sid": 1,
         "tkid": 3,
-        "token_text": "devoted"
+        "token_text": "devoted",
+        "display_id": 3
     },
     {
         "sid": 1,
         "tkid": 4,
-        "token_text": "to"
+        "token_text": "to",
+        "display_id": 4
     },
     {
         "sid": 1,
         "tkid": 5,
-        "token_text": "the"
+        "token_text": "the",
+        "display_id": 5
     },
     {
         "sid": 1,
         "tkid": 6,
         "token_text": "Second",
-        "spanid": 1
+        "spanid": 1,
+        "label_name": "VICTIM",
+        "display_id": 100
     },
     {
         "sid": 1,
         "tkid": 7,
         "token_text": "World",
-        "spanid": 1
+        "spanid": 1,
+        "label_name": "VICTIM",
+        "display_id": 100
     },
     {
         "sid": 1,
         "tkid": 8,
         "token_text": "War",
-        "spanid": 1
+        "spanid": 1,
+        "label_name": "VICTIM",
+        "display_id": 100
     },
     {
         "sid": 1,
         "tkid": 9,
-        "token_text": ","
+        "token_text": ",",
+        "display_id": 9
     },
     {
         "sid": 1,
         "tkid": 10,
-        "token_text": "which"
+        "token_text": "which",
+        "display_id": 10
     },
     {
         "sid": 1,
         "tkid": 11,
-        "token_text": "many"
+        "token_text": "many",
+        "display_id": 11
     },
     {
         "sid": 1,
         "tkid": 12,
-        "token_text": "scholars"
+        "token_text": "scholars",
+        "display_id": 12
     },
     {
         "sid": 1,
         "tkid": 13,
-        "token_text": "regard"
+        "token_text": "regard",
+        "display_id": 13
     },
     {
         "sid": 1,
         "tkid": 14,
-        "token_text": "as"
+        "token_text": "as",
+        "display_id": 14
     },
     {
         "sid": 1,
         "tkid": 15,
-        "token_text": "the"
+        "token_text": "the",
+        "display_id": 15
     },
     {
         "sid": 1,
         "tkid": 16,
         "token_text": "paradigmatic",
-        "spanid": 2
+        "spanid": 2,
+        "label_name": "PROBLEM PRACTICE",
+        "display_id": 101
     },
     {
         "sid": 1,
         "tkid": 17,
         "token_text": "instance",
-        "spanid": 2
+        "spanid": 2,
+        "label_name": "PROBLEM PRACTICE",
+        "display_id": 101
     },
     {
         "sid": 1,
         "tkid": 18,
-        "token_text": "of"
+        "token_text": "of",
+        "spanid": 2,
+        "label_name": "PROBLEM PRACTICE",
+        "display_id": 101
     },
     {
         "sid": 1,
         "tkid": 19,
         "token_text": "total",
-        "spanid": 2
+        "spanid": 2,
+        "label_name": "PROBLEM PRACTICE",
+        "display_id": 101
     },
     {
         "sid": 1,
         "tkid": 20,
         "token_text": "war",
-        "spanid": 2
+        "spanid": 2,
+        "label_name": "PROBLEM PRACTICE",
+        "display_id": 101
     },
     {
         "sid": 1,
         "tkid": 21,
-        "token_text": "."
+        "token_text": ".",
+        "display_id": 21
     }
 
 ]

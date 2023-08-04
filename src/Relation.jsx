@@ -1,13 +1,5 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import './App.css';
-// import '@fortawesome/fontawesome-free/css/all.min.css';
-// import { makeStyles } from '@material-ui/core/styles';
-// import Button from '@material-ui/core/Button';
-// import Fade from '@material-ui/core/Fade';
-// import Backdrop from '@material-ui/core/Backdrop';
-// import Dialog from '@material-ui/core/Dialog';
-// import { useState } from "react";
 import Records from "./records.json";
 import Xarrow, {useXarrow, Xwrapper} from 'react-xarrows';
 import Slider from "react-slider";
@@ -29,6 +21,7 @@ import Slider from "react-slider";
 
   const transformedRecords = [];
   const spanidSet = new Set();
+  // const categories = ["rank", "place", "threat", "name", "hatred", "peace"];
   
   Records.forEach(item => {
     if (item.spanid && !spanidSet.has(item.spanid)) {
@@ -49,22 +42,50 @@ import Slider from "react-slider";
       transformedRecords.push(item);
     }
   });
-  
-  
 
+  const tokenPairsList = [];
+  
+  for (let i in transformedRecords) {
+    if (transformedRecords[i].spanid) {
+        for (let j in transformedRecords){
+            if (transformedRecords[j].spanid && i!=j) {
+                const tokenPairs = [];
+                tokenPairs.push(transformedRecords[i]);
+                tokenPairs.push(transformedRecords[j]);
+                tokenPairsList.push(tokenPairs);
+            }
+
+        }
+    }
+  };
    
 
 class Relation extends React.Component {
+
+  //Enter all the relations here
+  state={
+    options : ["rank", "place", "threat", "name", "hatred", "peace"],
+    count: 0
+  }
+  onChange = e => {
+    this.setState({value: e.target.value});
+  }
     
     render () {
        const tokens_to_render = [];
        const input_tokens = transformedRecords;
        const span_cntr = [];
        const token_counter = [];
-       const rel_labeler = [];
+       const spanPairs = [];
+       const {value, options} = this.state;
       
-      // console.log(spanid);
        var cntr = 200;
+       if (this.state.count >= tokenPairsList.length) {
+        this.state.count = tokenPairsList.length - 1;
+       }
+       else if (this.state.count < 0) {
+        this.state.count = 0;
+       }
   
        input_tokens.forEach(tk => {
            const span = tk['spanid'];
@@ -96,22 +117,26 @@ class Relation extends React.Component {
            };
            cntr = cntr + 1;
       });
-      // console.log(span_cntr);
-      input_tokens.forEach(tk => {
-        if (tk['tkid'] === token_counter[0]) {
-            rel_labeler.push( <div className='labeler'>{tk['token_text']} </div>);
-            rel_labeler.push(<a>Pick a relation</a>);
-        }
-        else if (tk['tkid'] === token_counter[1]) {
-          rel_labeler.push( <div className='labeler'>{tk['token_text']} </div>);
-        }
-      });
 
-    
+     for (let i in span_cntr) {
+        for (let j in span_cntr){
+            if (i!=j) {
+                const spanPair = [];
+                spanPair.push(span_cntr[i]);
+                spanPair.push(span_cntr[j]);
+                spanPairs.push(spanPair);
+            }
+
+        }
+     };
+
+    //   console.log(span_cntr);
+
+
       return (
         <div key="outer" className= "outer">
           <div key="id" className="control-box">
-            <Xarrow  strokeWidth ={2} path='smooth' curveness={0.5} headSize={6} start ={`span${span_cntr[0]}`} end ={`span${span_cntr[1]}`}/>
+            
              {tokens_to_render}
              
           </div> 
@@ -129,12 +154,29 @@ class Relation extends React.Component {
                 max={10}
               />
               <div className='outerlabeler'>
-              {rel_labeler}
+              <div className='labeler'>{tokenPairsList[this.state.count][0]['token_text']} </div>
+              <label htmlFor='categories'>Pick a Relation: </label>
+              <select id='options' value={value} onChange={this.onChange}>
+                {options.map((val,index)=> {
+                //   console.log(index);
+                  return <option key={index} value={index}>{val}</option>
+                  
+                })}
+              </select>
+              <div className='labeler'>{tokenPairsList[this.state.count][1]['token_text']} </div>
+              <button onClick={() => this.setState({count: this.state.count - 1})}>
+                Previous
+              </button>
+              <button onClick={() => this.setState({count: this.state.count + 1})}>
+                Next
+              </button>
+              <Xarrow  strokeWidth ={2} path='smooth' curveness={0.5} headSize={6} start ={`span${spanPairs[this.state.count][0]}`} end ={`span${spanPairs[this.state.count][1]}`}/>
+
               </div>
           </div>
 
         </div>
       )
     }
-  }
+}
 export default Relation;

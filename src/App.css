@@ -85,7 +85,7 @@
   border: grey solid 2px; 
   border-radius: 10px; 
   padding: 5px;
-  z-index: 100;
+  z-index: 5;
   }
 
 /* .example_c-hovered,
@@ -108,7 +108,7 @@
   border: grey solid 2px; 
   border-radius: 10px; 
   padding: 5px;
-  z-index: 100;
+  z-index: 5;
   }
 
   .inner {
@@ -123,7 +123,7 @@
     margin-left:10px;
     margin-top:10px;
     padding: 5px;
-    z-index: 100;
+    z-index: 5;
   }
 
   .label {
@@ -133,7 +133,7 @@
     /* margin-left:5px;
     margin-top:5px;
     padding: 2px; */
-    z-index: 100;
+    z-index: 5;
   }
 
   .no-label {
@@ -156,7 +156,7 @@
     margin-left:10px;
     margin-top:10px;
     padding: 5px;
-    z-index: 100;
+    z-index: 6;
   }
   .annotation {
     display: flex;
@@ -166,7 +166,7 @@
     margin-left:10px;
     margin-top:10px;
     padding: 5px;
-    z-index: 100;
+    /* z-index: 100; */
   }
 
   .slider {
@@ -183,7 +183,7 @@
   border-radius: 50%;
   background-color: #007bff;
   cursor: grab;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px rgba(0, 0, 0, 0.2);
 }
 .labeler {
   color: #494949 !important;
@@ -191,15 +191,15 @@
   text-decoration: none;
   background: #ffffff;
   border: 2px solid #494949 !important;
-  display: inline-block;
-  /* flex-direction: row; */
+  display: flex;
+  flex-direction: row;
   transition: all 0.4s ease 0s;
   margin-left:10px;
   margin-top:10px;
   border: grey solid 2px; 
   border-radius: 10px; 
   padding: 10px;
-  z-index: 100;
+  z-index: 3;
 }
 
 .outerlabeler {
@@ -208,13 +208,44 @@
   text-decoration: none;
   background: #ffffff;
   border: 3px solid #494949 !important;
-  display: inline-block;
-  /* flex-direction: row; */
+  display: flex;
+  flex-direction: row;
   transition: all 0.4s ease 0s;
   margin-left:10px;
   margin-top:10px;
   border: grey solid 2px; 
-  /* border-radius: 10px;  */
+  border-radius: 10px; 
   padding: 10px;
-  z-index: 100;
+  z-index: 4;
+}
+
+.selector {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease 0s;
+  margin-left:10px;
+  margin-top:10px;
+  /* border: grey solid 2px;  */
+  border-radius: 5px; 
+  padding: 5px;
+  z-index: 3;
+}
+.navigation {
+  display: flex;
+  flex-direction: row;
+  transition: all 0.4s ease 0s;
+  margin-left:10px;
+  margin-top:10px;
+  /* border: grey solid 2px;  */
+  border-radius: 5px; 
+  padding: 10px;
+  z-index: 3;
+}
+.button {
+  margin-left:10px;
+  margin-top:10px;
+  /* border: grey solid 2px;  */
+  border-radius: 5px; 
+  padding: 10px;
+  z-index: 4;
 }

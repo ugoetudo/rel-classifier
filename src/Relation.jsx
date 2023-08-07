@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Records from "./records.json";
-import Xarrow, {useXarrow, Xwrapper} from 'react-xarrows';
+import Xarrow from 'react-xarrows';
 import Slider from "react-slider";
 
 
@@ -48,7 +48,7 @@ import Slider from "react-slider";
   for (let i in transformedRecords) {
     if (transformedRecords[i].spanid) {
         for (let j in transformedRecords){
-            if (transformedRecords[j].spanid && i!=j) {
+            if (transformedRecords[j].spanid && i!==j) {
                 const tokenPairs = [];
                 tokenPairs.push(transformedRecords[i]);
                 tokenPairs.push(transformedRecords[j]);
@@ -75,27 +75,28 @@ class Relation extends React.Component {
         const tokens_to_render = [];
         const input_tokens = transformedRecords;
         const span_cntr = [];
-        const token_counter = [];
         const spanPairs = [];
         const {value, options} = this.state;
 
         var cntr = 200;
         if (this.state.count >= tokenPairsList.length) {
-        this.state.count = tokenPairsList.length - 1;
+            this.setState({ count: tokenPairsList.length - 1});
         }
         else if (this.state.count < 0) {
-        this.state.count = 0;
+            this.setState({ count: 0});
         }
 
         input_tokens.forEach(tk => {
-            const span = tk['spanid'];
+            
             if (!tk['spanid']) {
                 tokens_to_render.push(
                 <div key= {`id${cntr}`} className = 'inner'>
                     <div id = {`label${cntr}`} className='no-label' key={tk.tkid}>--</div>
+
                     <div key={cntr} id = {`span${cntr}`} index={tk['spanid']} className='example_d'> 
                         {tk['token_text']} 
                     </div>
+
                 </div>
                 );
                 
@@ -103,24 +104,22 @@ class Relation extends React.Component {
                 tokens_to_render.push(
                 <div key = {`id${cntr}`} className = 'inner'>
                     <div id = {`label${cntr}`} className='label' key={tk.tkid} >{tk['label_name']}</div>
-                    <div
-                    key={cntr} id = {`span${cntr}`}
-                    index={tk['spanid']}
-                    className='example_c' 
-                    > 
+
+                    <div key={cntr} id = {`span${cntr}`} index={tk['spanid']} className='example_c'> 
                         {tk['token_text']} 
                     </div>
+
                 </div>
                 );
+
                 span_cntr.push(cntr);
-                token_counter.push(tk.tkid);
             };
             cntr = cntr + 1;
         });
 
         for (let i in span_cntr) {
         for (let j in span_cntr){
-            if (i!=j) {
+            if (i!==j) {
                 const spanPair = [];
                 spanPair.push(span_cntr[i]);
                 spanPair.push(span_cntr[j]);
@@ -173,12 +172,17 @@ class Relation extends React.Component {
                     
                 </div>
                 <div className='navigation'>
-                    <button className='button' onClick={() => this.setState({count: this.state.count - 1})}>
-                            Previous
-                        </button>
-                    <button className='button' onClick={() => this.setState({count: this.state.count + 1})}>
-                            Next
-                        </button>
+                    
+                    <p>{`Relation `}<strong>{this.state.count}</strong> {`of `} <strong>{tokenPairsList.length}</strong></p>
+                    
+                    <div className='count'>
+                        <button className='button' onClick={() => this.setState({count: this.state.count - 1})}>
+                                Previous
+                            </button>
+                        <button className='button' onClick={() => this.setState({count: this.state.count + 1})}>
+                                Next
+                            </button>
+                    </div>
                 </div>
 
                 

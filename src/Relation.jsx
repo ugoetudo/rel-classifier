@@ -4,7 +4,7 @@ import Records from "./records.json";
 import Xarrow from 'react-xarrows';
 import Slider from "react-slider";
 
-
+<script src="http://localhost:8097"></script>
 // for (let i = 0; i < Records.length - 1; i++) {
 //   if (Records[i].hasOwnProperty("spanid")) {
 //     let token_text = Records[i].token_text;
@@ -62,14 +62,17 @@ import Slider from "react-slider";
 
 class Relation extends React.Component {
 
-  //Enter all the relations here
-  state={
-    options : ["rank", "place", "threat", "name", "hatred", "peace"],
-    count: 0
-  }
-  onChange = e => {
-    this.setState({value: e.target.value});
-  }
+    constructor(props) {
+        super(props);
+        this.state={
+            options : ["rank", "place", "threat", "name", "hatred", "peace"],
+            count: 0
+        };
+    }
+
+    onChange = e => {
+        this.setState({value: e.target.value});
+    }
     
     render () {
         const tokens_to_render = [];
@@ -80,10 +83,10 @@ class Relation extends React.Component {
 
         var cntr = 200;
         if (this.state.count >= tokenPairsList.length) {
-            this.setState({ count: tokenPairsList.length - 1});
+            this.state.count = tokenPairsList.length - 1;
         }
         else if (this.state.count < 0) {
-            this.setState({ count: 0});
+            this.state.count = 0;
         }
 
         input_tokens.forEach(tk => {

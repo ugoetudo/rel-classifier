@@ -176,7 +176,7 @@ class Relation extends React.Component {
                 </div>
                 <div className='navigation'>
                     
-                    <p>{`Relation `}<strong>{this.state.count}</strong> {`of `} <strong>{tokenPairsList.length}</strong></p>
+                    <p>{`Relation `}<strong>{this.state.count + 1}</strong> {`of `} <strong>{tokenPairsList.length}</strong></p>
                     
                     <div className='count'>
                         <button className='button' onClick={() => this.setState({count: this.state.count - 1})}>

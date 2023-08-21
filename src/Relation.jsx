@@ -65,7 +65,7 @@ class Relation extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            options : ["rank", "place", "threat", "name", "hatred", "peace"],
+            options : ["RANK", "LEADER OF", "THREAT", "NAME", "HATRED", "PEACE"],
             count: 0
         };
     }

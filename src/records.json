@@ -1,0 +1,82 @@
+
+
+[ 
+    {
+        "sid": 1,
+        "tkid": 1,
+        "token_text": "Barrack",
+        "spanid": 1,
+        "label_name": "NAME"
+    },
+    {
+        "sid": 1,
+        "tkid": 2,
+        "token_text": "Obama",
+        "spanid": 1,
+        "label_name": "NAME"
+    },
+    {
+        "sid": 1,
+        "tkid": 3,
+        "token_text": "was"
+    },
+    {
+        "sid": 1,
+        "tkid": 4,
+        "token_text": "once"
+    },
+    {
+        "sid": 1,
+        "tkid": 5,
+        "token_text": "the"
+    },
+    {
+        "sid": 1,
+        "tkid": 6,
+        "token_text": "president"
+    },
+    {
+        "sid": 1,
+        "tkid": 7,
+        "token_text": "of"
+    },
+    {
+        "sid": 1,
+        "tkid": 8,
+        "token_text": "the"
+    },
+    {
+        "sid": 1,
+        "tkid": 9,
+        "token_text": "United",
+        "spanid": 2,
+        "label_name": "COUNTRY"
+    },
+    {
+        "sid": 1,
+        "tkid": 10,
+        "token_text": "States",
+        "spanid": 2,
+        "label_name": "COUNTRY"
+    },
+    {
+        "sid": 1,
+        "tkid": 11,
+        "token_text": "of",
+        "spanid": 2,
+        "label_name": "COUNTRY"
+    },
+    {
+        "sid": 1,
+        "tkid": 12,
+        "token_text": "America",
+        "spanid": 2,
+        "label_name": "COUNTRY"
+    },
+    {
+        "sid": 1,
+        "tkid": 13,
+        "token_text": "."
+
+    }
+]
